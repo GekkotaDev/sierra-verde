@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://duw6pg81rngdy"]
 
 [ext_resource type="Theme" uid="uid://d04wd0y4ej4f" path="res://views/themes/theme.tres" id="1_6uxe2"]
-[ext_resource type="Script" uid="uid://dk2tyygmqb8iw" path="res://modules/gevp_plus/views/debug_hud.gd" id="2_y0o6x"]
-[ext_resource type="FontFile" uid="uid://befv7bfyhrsdw" path="res://views/typefaces/zilla_slab/ZillaSlab-Bold.ttf" id="3_fs8nv"]
+[ext_resource type="Script" uid="uid://dk2tyygmqb8iw" path="res://modules/gevp_extensions/views/debug_hud.gd" id="2_y0o6x"]
+[ext_resource type="FontFile" uid="uid://befv7bfyhrsdw" path="res://resources/typefaces/zilla_slab/ZillaSlab-Bold.ttf" id="3_fs8nv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04nfc"]
 bg_color = Color(0, 0, 0, 1)

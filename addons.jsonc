@@ -22,6 +22,11 @@
       "source": "zip",
       "subfolder": "godot-asset-placer-1.2.4/addons/asset_placer"
     },
+    "com.gdquest.godot-steering-ai-framework": {
+      "url": "https://github.com/GDQuest/godot-steering-ai-framework/archive/refs/tags/3.0.0.zip",
+      "source": "zip",
+      "subfolder": "godot-steering-ai-framework-3.0.0/addons/com.gdquest.godot-steering-ai-framework"
+    },
     "csg_toolkit": {
       "url": "https://github.com/IIFabixn/CSG_Toolkit/archive/refs/tags/1.6.1.zip",
       "source": "zip",
@@ -102,6 +107,11 @@
       "source": "zip",
       "subfolder": "netfox.noray.v1.25.3/addons/netfox.noray"
     },
+    "nodot": {
+      "url": "https://github.com/NodotProject/nodot/archive/refs/tags/v0.3.0.zip",
+      "source": "zip",
+      "subfolder": "nodot-0.3.0/addons/nodot"
+    },
     "panku_console": {
       "url": "https://github.com/Ark2000/PankuConsole/archive/refs/tags/v1.7.9.zip",
       "source": "zip",
@@ -153,9 +163,9 @@
       "subfolder": "godot_sound_manager-2.6.2/addons/sound_manager"
     },
     "terrabrush": {
-      "url": "https://github.com/spimort/TerraBrush/archive/refs/tags/0.13.1Alpha.zip",
+      "url": "https://github.com/spimort/TerraBrush/releases/download/0.14.0Alpha/terrabrush-0.14.0-alpha.zip",
       "source": "zip",
-      "subfolder": "TerraBrush-0.13.1Alpha/addons/terrabrush"
+      "subfolder": "addons/terrabrush"
     },
     "waterways_net": {
         "url": "https://github.com/Tshmofen/waterways-net/archive/refs/tags/v1.0.1.zip",

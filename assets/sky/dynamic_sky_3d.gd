@@ -1,4 +1,4 @@
-@tool extends Node3D
+@tool extends WorldEnvironment
 
 const DAYLIGHT_CYCLE_NORMALIZED = 360
 

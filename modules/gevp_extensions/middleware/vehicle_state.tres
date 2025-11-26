@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VehicleState" load_steps=2 format=3 uid="uid://b2y3noryrkn57"]
 
-[ext_resource type="Script" uid="uid://c1tqv0i5po2yx" path="res://modules/gevp_plus/middleware/vehicle_state.gd" id="1_frcga"]
+[ext_resource type="Script" uid="uid://c1tqv0i5po2yx" path="res://modules/gevp_extensions/middleware/vehicle_state.gd" id="1_frcga"]
 
 [resource]
 script = ExtResource("1_frcga")

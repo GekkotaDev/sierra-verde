@@ -1,28 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://mpu8056ggc0w"]
+[gd_scene load_steps=25 format=3 uid="uid://mpu8056ggc0w"]
 
 [ext_resource type="Shader" uid="uid://tstbo6mjsxrf" path="res://assets/viewports/world_viewport/edge_detection.gdshader" id="1_3hei7"]
 [ext_resource type="Script" uid="uid://c551q81ygcwkr" path="res://addons/zylann.hterrain/hterrain.gd" id="1_cmnks"]
+[ext_resource type="Script" uid="uid://dd7ndea633gug" path="res://assets/viewports/world_viewport/world_viewport.gd" id="1_jksds"]
 [ext_resource type="PackedScene" uid="uid://bhe0on3invxsn" path="res://assets/sky/dynamic_sky_3d.tscn" id="1_l8430"]
 [ext_resource type="Resource" uid="uid://b8n7mn1irosp3" path="res://scenes/locations/sky_springs_city/SkySpringsCity/data.hterrain" id="2_csu36"]
 [ext_resource type="Script" uid="uid://bnivhchllo3kl" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_csu36"]
 [ext_resource type="Script" uid="uid://bbahb0bjns7me" path="res://addons/road-generator/nodes/road_manager.gd" id="7_c3prm"]
+[ext_resource type="Script" uid="uid://ci65kvcftuha" path="res://addons/nodot/effects/Rain3D.gd" id="7_fj3cp"]
 [ext_resource type="Script" uid="uid://bfxq2aa3gpdad" path="res://addons/road-generator/nodes/road_container.gd" id="8_c3prm"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="8_l8430"]
 [ext_resource type="Script" uid="uid://dfkfgg47rr183" path="res://addons/road-generator/nodes/road_point.gd" id="9_1msoc"]
-[ext_resource type="ArrayMesh" uid="uid://bkd6tn5j7hw1q" path="res://assets/Kenney/City Kit - Commercial/Models/OBJ format/large_buildingF.obj" id="10_rn24q"]
-[ext_resource type="ArrayMesh" uid="uid://cv6q5qu36o4ga" path="res://assets/Kenney/City Kit - Commercial/Models/OBJ format/large_buildingA.obj" id="11_gffuq"]
-[ext_resource type="Texture2D" uid="uid://ddp3nyrotcavb" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/Textures/grass.png" id="12_l8430"]
-[ext_resource type="ArrayMesh" uid="uid://cim3bvghpp750" path="res://assets/Kenney/City Kit - Commercial/Models/OBJ format/large_buildingG.obj" id="12_v3ail"]
-[ext_resource type="ArrayMesh" uid="uid://b2wv2nb2t53aq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-b.obj" id="13_gffuq"]
-[ext_resource type="ArrayMesh" uid="uid://bi3hvia0q7c3t" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-c.obj" id="14_v3ail"]
-[ext_resource type="ArrayMesh" uid="uid://xupqh1mvvwmk" path="res://assets/Kenney/Modular Buildings/Models/OBJ format/detail-ac-b.obj" id="15_m6crt"]
+[ext_resource type="Script" uid="uid://b7a5oqdsx71dd" path="res://addons/gevp/scripts/vehicle_controllergd.gd" id="10_l8430"]
+[ext_resource type="Script" uid="uid://b5aebkcsbair1" path="res://addons/gevp/scripts/camera.gd" id="11_jksds"]
+[ext_resource type="PackedScene" uid="uid://c5jichmbbdws8" path="res://assets/vehicles/cars/detroit_motors_limited/judge/scenes/dml_judge.tscn" id="12_fj3cp"]
+[ext_resource type="PackedScene" uid="uid://b63rq4jeigte2" path="res://addons/road-generator/custom_containers/4way_2x2.tscn" id="14_cmnks"]
 [ext_resource type="ArrayMesh" uid="uid://dt8v88p58onj1" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/road-asphalt-pavement.obj" id="17_jksds"]
+[ext_resource type="ArrayMesh" uid="uid://u4hg2plkof0j" path="res://assets/Kenney/City Kit - Roads/Models/OBJ format/road-roundabout-barrier.obj" id="18_csu36"]
 [ext_resource type="Texture2D" uid="uid://b35ct4iealhni" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/Textures/tiles.png" id="18_fj3cp"]
-
-[sub_resource type="Resource" id="Resource_xbskg"]
-script = ExtResource("3_csu36")
-mode = 0
-textures = [[], []]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c3prm"]
 flip_faces = true
@@ -37,6 +32,17 @@ shader_parameter/useLighting = true
 shader_parameter/lineHighlight = 0.2
 shader_parameter/lineShadow = 1.0
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e7u06"]
+exposure_multiplier = 0.75
+auto_exposure_enabled = true
+dof_blur_far_transition = 750.0
+dof_blur_near_transition = 16.0
+
+[sub_resource type="Resource" id="Resource_xbskg"]
+script = ExtResource("3_csu36")
+mode = 0
+textures = [[], []]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yugqs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij4oa"]
@@ -47,7 +53,7 @@ uv1_scale = Vector3(8, 8, 8)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 
-[node name="WorldViewportContainer" type="SubViewportContainer" parent="."]
+[node name="WorldViewportContainer" type="SubViewportContainer" parent="." node_paths=PackedStringArray("REFERENCE_CAMERA", "VIEWPORT_CAMERA")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,13 +61,66 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 stretch_shrink = 4
+script = ExtResource("1_jksds")
+REFERENCE_CAMERA = NodePath("VehicleController/Camera3D")
+VIEWPORT_CAMERA = NodePath("WorldSubViewport/ViewportCamera")
 
 [node name="WorldSubViewport" type="SubViewport" parent="WorldViewportContainer"]
 handle_input_locally = false
 size = Vector2i(320, 180)
 render_target_update_mode = 4
 
-[node name="HTerrain" type="Node3D" parent="WorldViewportContainer/WorldSubViewport"]
+[node name="ViewportCamera" type="Camera3D" parent="WorldViewportContainer/WorldSubViewport"]
+top_level = true
+v_offset = 1.0
+doppler_tracking = 2
+
+[node name="EdgeDetectionShader" type="MeshInstance3D" parent="WorldViewportContainer/WorldSubViewport/ViewportCamera"]
+transform = Transform3D(0.999988, 0.00408909, -0.00253917, -0.00408341, 0.999989, 0.00223752, 0.00254828, -0.00222713, 0.999994, 0, 0, 0)
+visible = false
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_c3prm")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_1msoc")
+
+[node name="DynamicSky3D" parent="WorldViewportContainer/WorldSubViewport" instance=ExtResource("1_l8430")]
+
+[node name="LightmapGI" type="LightmapGI" parent="WorldViewportContainer/WorldSubViewport/DynamicSky3D"]
+
+[node name="VehicleController" type="Node3D" parent="WorldViewportContainer" node_paths=PackedStringArray("vehicle_node")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, 3)
+script = ExtResource("10_l8430")
+vehicle_node = NodePath("VehicleRigidBody")
+string_brake_input = "vehicle_brake"
+string_steer_left = "vehicle_steer_left"
+string_steer_right = "vehicle_steer_right"
+string_throttle_input = "vehicle_throttle"
+string_handbrake_input = "vehicle_handbrake"
+string_clutch_input = "vehicle_clutch"
+string_toggle_transmission = "vehicle_toggle_transmission"
+string_shift_up = "vehicle_shift_up"
+string_shift_down = "vehicle_shift_down"
+
+[node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/VehicleController" node_paths=PackedStringArray("follow_this")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+top_level = true
+attributes = SubResource("CameraAttributesPractical_e7u06")
+current = true
+fov = 100.0
+script = ExtResource("11_jksds")
+follow_distance = 6
+follow_this = NodePath("../VehicleRigidBody")
+
+[node name="VehicleRigidBody" parent="WorldViewportContainer/VehicleController" node_paths=PackedStringArray("camera") instance=ExtResource("12_fj3cp")]
+camera = NodePath("../Camera3D")
+
+[node name="Rain3D" type="Node3D" parent="WorldViewportContainer/VehicleController"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 8, 0)
+script = ExtResource("7_fj3cp")
+amount = 500
+metadata/_custom_type_script = "uid://ci65kvcftuha"
+
+[node name="HTerrain" type="Node3D" parent="WorldViewportContainer"]
 script = ExtResource("1_cmnks")
 _terrain_data = ExtResource("2_csu36")
 chunk_size = 32
@@ -82,54 +141,51 @@ shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
 shader_params/u_specular = 0.5
 metadata/_custom_type_script = "uid://c551q81ygcwkr"
 
-[node name="DynamicSky3D" parent="WorldViewportContainer/WorldSubViewport" instance=ExtResource("1_l8430")]
-
-[node name="LightmapGI" type="LightmapGI" parent="WorldViewportContainer/WorldSubViewport/DynamicSky3D"]
-
-[node name="ViewportCamera" type="Camera3D" parent="WorldViewportContainer/WorldSubViewport"]
-top_level = true
-v_offset = 1.0
-doppler_tracking = 2
-
-[node name="EdgeDetectionShader" type="MeshInstance3D" parent="WorldViewportContainer/WorldSubViewport/ViewportCamera"]
-transform = Transform3D(0.999988, 0.00408909, -0.00253917, -0.00408341, 0.999989, 0.00223752, 0.00254828, -0.00222713, 0.999994, 0, 0, 0)
-visible = false
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_c3prm")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_1msoc")
-
-[node name="RoadManager" type="Node3D" parent="WorldViewportContainer/WorldSubViewport"]
+[node name="RoadManager" type="Node3D" parent="WorldViewportContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, 98)
 script = ExtResource("7_c3prm")
 metadata/_custom_type_script = "uid://bbahb0bjns7me"
 
-[node name="Road_001" type="Node3D" parent="WorldViewportContainer/WorldSubViewport/RoadManager"]
+[node name="Road_001" type="Node3D" parent="WorldViewportContainer/RoadManager"]
 script = ExtResource("8_c3prm")
-material_resource = ExtResource("8_l8430")
 use_lowpoly_preview = true
-edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
-edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
-edge_rp_target_dirs = Array[int]([-1, -1])
+edge_containers = Array[NodePath]([NodePath("../4way_2x2"), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath("RP_003"), NodePath("")])
+edge_rp_target_dirs = Array[int]([1, -1])
 edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002")])
 edge_rp_local_dirs = Array[int]([0, 1])
 
-[node name="RP_001" type="Node3D" parent="WorldViewportContainer/WorldSubViewport/RoadManager/Road_001"]
-transform = Transform3D(0.024625033, -0.010367238, 0.99964297, 0, 0.99994624, 0.010370383, -0.99969673, -0.00025537104, 0.024623709, 14.692132, 0.25, 0.37083054)
+[node name="RP_001" type="Node3D" parent="WorldViewportContainer/RoadManager/Road_001"]
+transform = Transform3D(0.004666387, 0.003056919, -0.99998444, 0, 0.99999535, 0.0030569523, 0.9999891, -1.4264922e-05, 0.004666365, -0.38787842, 0.25, 0.21962738)
 script = ExtResource("9_1msoc")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
-next_mag = 16.0
+next_mag = 40.890247
 prior_pt_init = NodePath("../RP_002")
 
-[node name="RP_002" type="Node3D" parent="WorldViewportContainer/WorldSubViewport/RoadManager/Road_001"]
-transform = Transform3D(0.024625152, -0.023442216, 0.9994218, 0, 0.99972504, 0.023449326, -0.99969673, -0.0005774433, 0.02461838, -34.406376, 0.25, -0.22277737)
+[node name="RP_002" type="Node3D" parent="WorldViewportContainer/RoadManager/Road_001"]
+transform = Transform3D(0.004666506, 0.006312821, -0.9999692, 0, 0.9999801, 0.00631289, 0.99998903, -2.9459141e-05, 0.004666413, 81.39134, 0.25000095, -0.16199493)
 script = ExtResource("9_1msoc")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
-prior_mag = 16.0
-next_mag = 16.0
+prior_mag = 40.890247
+next_mag = 40.890247
 next_pt_init = NodePath("../RP_001")
+
+[node name="4way_2x2" type="Node3D" parent="WorldViewportContainer/RoadManager" instance=ExtResource("14_cmnks")]
+transform = Transform3D(-0.99998444, 0.003056919, -0.0046663433, 0.0030569523, 0.99999535, -1.3362365e-10, 0.0046663214, -1.4264922e-05, -0.9999891, -16.387619, 0.2989111, 0.29428864)
+script = ExtResource("8_c3prm")
+create_geo = false
+material_resource = ExtResource("8_l8430")
+use_lowpoly_preview = true
+generate_ai_lanes = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath(""), NodePath("../Road_001"), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath(""), NodePath("RP_001"), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1, 0, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002"), NodePath("RP_003"), NodePath("RP_004")])
+edge_rp_local_dirs = Array[int]([1, 0, 1, 0])
+
+[node name="Buildings" type="Node3D" parent="WorldViewportContainer"]
 
 [node name="InterfaceViewportContainer" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -173,39 +229,12 @@ offset_bottom = 31.0
 text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
-[node name="LargeBuildingF" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 106, 0, 117)
-mesh = ExtResource("10_rn24q")
-
-[node name="LargeBuildingA" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 103, 0, 77)
-mesh = ExtResource("11_gffuq")
-
-[node name="Decal" type="Decal" parent="LargeBuildingA"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
-size = Vector3(2.1, 2, 1.5)
-texture_albedo = ExtResource("12_l8430")
-texture_normal = ExtResource("12_l8430")
-modulate = Color(1.7808378e-06, 0.7551182, 0.3512056, 1)
-
-[node name="LargeBuildingG" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 149, 0, 74)
-mesh = ExtResource("12_v3ail")
-
-[node name="BuildingTypeB" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 141, 0, 128)
-mesh = ExtResource("13_gffuq")
-
-[node name="BuildingTypeC" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 166, 0, 127)
-mesh = ExtResource("14_v3ail")
-
-[node name="DetailAcB" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 103, 26, 76)
-mesh = ExtResource("15_m6crt")
-
 [node name="RoadAsphaltPavement" type="MeshInstance3D" parent="."]
 transform = Transform3D(35.2, 0, 0, 0, 16, 0, 0, 0, 35.2, 80, 0.1, 82)
 mesh = ExtResource("17_jksds")
 surface_material_override/0 = SubResource("StandardMaterial3D_yugqs")
 surface_material_override/1 = SubResource("StandardMaterial3D_ij4oa")
+
+[node name="RoadRoundaboutBarrier" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 107)
+mesh = ExtResource("18_csu36")

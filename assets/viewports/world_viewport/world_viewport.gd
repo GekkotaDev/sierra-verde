@@ -3,12 +3,13 @@ extends SubViewportContainer
 
 
 @export_group("Camera")
-@export var REFERENCE_CAMERA: NodePath
+@export var REFERENCE_CAMERA: Camera3D
+@export var VIEWPORT_CAMERA:  Camera3D
 @export var POSITION: Vector3 = Vector3.ZERO
 @export var ROTATION: Vector3 = Vector3.ZERO
 
-@onready var followed_camera = get_node(REFERENCE_CAMERA) as Camera3D
-@onready var viewport_camera = %ViewportCamera as Camera3D
+@onready var followed_camera = REFERENCE_CAMERA
+@onready var viewport_camera = VIEWPORT_CAMERA
 
 
 func _setup_camera():

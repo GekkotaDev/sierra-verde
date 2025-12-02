@@ -60,7 +60,10 @@ NetworkManager="*res://addons/nodot/autoload/NetworkManager.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"end": "res://data/dialog/end.dtl",
+"welcome": "res://data/dialog/welcome.dtl"
+}
 layout/style_directory={}
 
 [dialogue_manager]
@@ -80,13 +83,14 @@ project/assembly_name="Sierra Verde"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/deformablemesh/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/pot_generation/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/road-generator/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/traudio/plugin.cfg", "res://addons/waterways_net/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/deformablemesh/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/pot_generation/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/road-generator/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/traudio/plugin.cfg", "res://addons/waterways_net/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://assets/": "yellow",
 "res://modules/": "gray",
+"res://nodes/": "red",
 "res://scenes/": "blue",
 "res://views/": "red"
 }

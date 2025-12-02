@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://mpu8056ggc0w"]
+[gd_scene load_steps=62 format=3 uid="uid://mpu8056ggc0w"]
 
 [ext_resource type="Shader" uid="uid://tstbo6mjsxrf" path="res://assets/viewports/world_viewport/edge_detection.gdshader" id="1_3hei7"]
 [ext_resource type="Script" uid="uid://c551q81ygcwkr" path="res://addons/zylann.hterrain/hterrain.gd" id="1_cmnks"]
@@ -9,15 +9,46 @@
 [ext_resource type="Script" uid="uid://bbahb0bjns7me" path="res://addons/road-generator/nodes/road_manager.gd" id="7_c3prm"]
 [ext_resource type="Script" uid="uid://ci65kvcftuha" path="res://addons/nodot/effects/Rain3D.gd" id="7_fj3cp"]
 [ext_resource type="Script" uid="uid://bfxq2aa3gpdad" path="res://addons/road-generator/nodes/road_container.gd" id="8_c3prm"]
-[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="8_l8430"]
 [ext_resource type="Script" uid="uid://dfkfgg47rr183" path="res://addons/road-generator/nodes/road_point.gd" id="9_1msoc"]
 [ext_resource type="Script" uid="uid://b7a5oqdsx71dd" path="res://addons/gevp/scripts/vehicle_controllergd.gd" id="10_l8430"]
 [ext_resource type="Script" uid="uid://b5aebkcsbair1" path="res://addons/gevp/scripts/camera.gd" id="11_jksds"]
 [ext_resource type="PackedScene" uid="uid://c5jichmbbdws8" path="res://assets/vehicles/cars/detroit_motors_limited/judge/scenes/dml_judge.tscn" id="12_fj3cp"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="13_vt2wg"]
 [ext_resource type="PackedScene" uid="uid://b63rq4jeigte2" path="res://addons/road-generator/custom_containers/4way_2x2.tscn" id="14_cmnks"]
 [ext_resource type="ArrayMesh" uid="uid://dt8v88p58onj1" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/road-asphalt-pavement.obj" id="17_jksds"]
+[ext_resource type="ArrayMesh" uid="uid://dgkhbg6g5f6pa" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-a.obj" id="18_6qhsl"]
 [ext_resource type="ArrayMesh" uid="uid://u4hg2plkof0j" path="res://assets/Kenney/City Kit - Roads/Models/OBJ format/road-roundabout-barrier.obj" id="18_csu36"]
 [ext_resource type="Texture2D" uid="uid://b35ct4iealhni" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/Textures/tiles.png" id="18_fj3cp"]
+[ext_resource type="ArrayMesh" uid="uid://b2wv2nb2t53aq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-b.obj" id="19_fnuou"]
+[ext_resource type="ArrayMesh" uid="uid://bi3hvia0q7c3t" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-c.obj" id="20_6ktio"]
+[ext_resource type="ArrayMesh" uid="uid://bygaebq0gob71" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-d.obj" id="21_8os35"]
+[ext_resource type="ArrayMesh" uid="uid://ballqhi23nax4" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-e.obj" id="22_m2qs6"]
+[ext_resource type="ArrayMesh" uid="uid://ddvkg08abyasm" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-f.obj" id="23_bkquo"]
+[ext_resource type="ArrayMesh" uid="uid://bvwabbgjk6qry" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-g.obj" id="24_id3xx"]
+[ext_resource type="ArrayMesh" uid="uid://ehavo2ynmxde" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-h.obj" id="25_dosbr"]
+[ext_resource type="ArrayMesh" uid="uid://8jciyulwduix" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-i.obj" id="26_vt2wg"]
+[ext_resource type="ArrayMesh" uid="uid://d11qw1netrgho" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-j.obj" id="27_jy57t"]
+[ext_resource type="ArrayMesh" uid="uid://cx6n1tut566aq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-k.obj" id="28_vk8cc"]
+[ext_resource type="ArrayMesh" uid="uid://blprutiqtxwou" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-l.obj" id="29_5ppqc"]
+[ext_resource type="ArrayMesh" uid="uid://sftnmup0qx5x" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-m.obj" id="30_isw1e"]
+[ext_resource type="ArrayMesh" uid="uid://hqa8a2s6asrt" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-n.obj" id="31_7x140"]
+[ext_resource type="ArrayMesh" uid="uid://dsnq4y2lw471o" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-o.obj" id="32_6d6sf"]
+[ext_resource type="ArrayMesh" uid="uid://q2t3doippoiq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-p.obj" id="33_tr740"]
+[ext_resource type="ArrayMesh" uid="uid://rley5u4yb0x8" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-q.obj" id="34_e3vn1"]
+[ext_resource type="ArrayMesh" uid="uid://b2h5vffiia3x2" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-r.obj" id="35_4j6jj"]
+[ext_resource type="ArrayMesh" uid="uid://tb7chqexx6em" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-s.obj" id="36_qkncs"]
+[ext_resource type="ArrayMesh" uid="uid://b4fpisrgtjyeh" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-t.obj" id="37_x6s8g"]
+[ext_resource type="ArrayMesh" uid="uid://hv8cx7kchr6b" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-u.obj" id="38_uq6bw"]
+[ext_resource type="Script" uid="uid://dyfdj67xm3pae" path="res://addons/proton_scatter/src/scatter.gd" id="40_jy57t"]
+[ext_resource type="Script" uid="uid://buesvfcnk5aqm" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="41_vk8cc"]
+[ext_resource type="Script" uid="uid://cya71nhtmx8e0" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="42_5ppqc"]
+[ext_resource type="Script" uid="uid://drq1lsw5lbmfj" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="43_5ppqc"]
+[ext_resource type="Script" uid="uid://d2jg7oeob4vmk" path="res://addons/proton_scatter/src/scatter_item.gd" id="44_7x140"]
+[ext_resource type="Script" uid="uid://cktdf65ei2033" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="44_isw1e"]
+[ext_resource type="Script" uid="uid://d3yi04l0x6bua" path="res://addons/proton_scatter/src/scatter_shape.gd" id="45_6d6sf"]
+[ext_resource type="Script" uid="uid://ds208gd4b3dlg" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="45_7x140"]
+[ext_resource type="Script" uid="uid://c1b5fgjrvdngl" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="46_6d6sf"]
+[ext_resource type="Script" uid="uid://cmiodm5bec4ay" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="46_tr740"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c3prm"]
 flip_faces = true
@@ -48,6 +79,40 @@ textures = [[], []]
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij4oa"]
 albedo_texture = ExtResource("18_fj3cp")
 uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="Resource" id="Resource_tr740"]
+script = ExtResource("43_5ppqc")
+amount = 75
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_e3vn1"]
+script = ExtResource("44_isw1e")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_4j6jj"]
+script = ExtResource("45_7x140")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_qkncs"]
+script = ExtResource("46_6d6sf")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_x6s8g"]
+script = ExtResource("41_vk8cc")
+stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_tr740"), SubResource("Resource_e3vn1"), SubResource("Resource_4j6jj"), SubResource("Resource_qkncs")])
+
+[sub_resource type="Resource" id="Resource_uq6bw"]
+script = ExtResource("46_tr740")
+size = Vector3(100, 1, 100)
+metadata/_custom_type_script = "uid://cmiodm5bec4ay"
 
 [node name="SkySpringsCity" type="Node3D"]
 
@@ -148,6 +213,7 @@ metadata/_custom_type_script = "uid://bbahb0bjns7me"
 
 [node name="Road_001" type="Node3D" parent="WorldViewportContainer/RoadManager"]
 script = ExtResource("8_c3prm")
+material_resource = ExtResource("13_vt2wg")
 use_lowpoly_preview = true
 edge_containers = Array[NodePath]([NodePath("../4way_2x2"), NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath("RP_003"), NodePath("")])
@@ -172,18 +238,11 @@ prior_mag = 40.890247
 next_mag = 40.890247
 next_pt_init = NodePath("../RP_001")
 
-[node name="4way_2x2" type="Node3D" parent="WorldViewportContainer/RoadManager" instance=ExtResource("14_cmnks")]
+[node name="4way_2x2" parent="WorldViewportContainer/RoadManager" instance=ExtResource("14_cmnks")]
 transform = Transform3D(-0.99998444, 0.003056919, -0.0046663433, 0.0030569523, 0.99999535, -1.3362365e-10, 0.0046663214, -1.4264922e-05, -0.9999891, -16.387619, 0.2989111, 0.29428864)
-script = ExtResource("8_c3prm")
-create_geo = false
-material_resource = ExtResource("8_l8430")
-use_lowpoly_preview = true
-generate_ai_lanes = true
 edge_containers = Array[NodePath]([NodePath(""), NodePath(""), NodePath("../Road_001"), NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath(""), NodePath(""), NodePath("RP_001"), NodePath("")])
 edge_rp_target_dirs = Array[int]([-1, -1, 0, -1])
-edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002"), NodePath("RP_003"), NodePath("RP_004")])
-edge_rp_local_dirs = Array[int]([1, 0, 1, 0])
 
 [node name="Buildings" type="Node3D" parent="WorldViewportContainer"]
 
@@ -238,3 +297,130 @@ surface_material_override/1 = SubResource("StandardMaterial3D_ij4oa")
 [node name="RoadRoundaboutBarrier" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 107)
 mesh = ExtResource("18_csu36")
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="BuildingTypeA" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+mesh = ExtResource("18_6qhsl")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeB" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
+mesh = ExtResource("19_fnuou")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeC" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+mesh = ExtResource("20_6ktio")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeD" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -8)
+mesh = ExtResource("21_8os35")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeE" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+mesh = ExtResource("22_m2qs6")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeF" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -8)
+mesh = ExtResource("23_bkquo")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeG" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+mesh = ExtResource("24_id3xx")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeH" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
+mesh = ExtResource("25_dosbr")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeI" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+mesh = ExtResource("26_vt2wg")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeJ" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -8)
+mesh = ExtResource("27_jy57t")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeK" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
+mesh = ExtResource("28_vk8cc")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeL" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -8)
+mesh = ExtResource("29_5ppqc")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeM" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8)
+mesh = ExtResource("30_isw1e")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeN" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -8)
+mesh = ExtResource("31_7x140")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeO" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -8)
+mesh = ExtResource("32_6d6sf")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeP" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -8)
+mesh = ExtResource("33_tr740")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeQ" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -8)
+mesh = ExtResource("34_e3vn1")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeR" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -8)
+mesh = ExtResource("35_4j6jj")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeS" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -8)
+mesh = ExtResource("36_qkncs")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeT" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, -8)
+mesh = ExtResource("37_x6s8g")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeU" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, -8)
+mesh = ExtResource("38_uq6bw")
+skeleton = NodePath("../..")
+
+[node name="BuildingTypeG" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 20, 0, 20)
+mesh = ExtResource("24_id3xx")
+
+[node name="ProtonScatter" type="Node3D" parent="."]
+script = ExtResource("40_jy57t")
+modifier_stack = SubResource("Resource_x6s8g")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://dyfdj67xm3pae"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("45_6d6sf")
+shape = SubResource("Resource_uq6bw")
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("44_7x140")
+path = "uid://ds721ybj4tt34"

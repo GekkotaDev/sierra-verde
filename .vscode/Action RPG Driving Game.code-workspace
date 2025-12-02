@@ -11,6 +11,10 @@
         }
     ],
     "settings": {
+        "[gdscript]": {
+            "editor.tabSize": 4,
+            "editor.insertSpaces": false
+        },
         "[markdown]": {
             "editor.wordWrap": "bounded",
             "editor.wordWrapColumn": 90

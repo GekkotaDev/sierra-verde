@@ -132,6 +132,11 @@
       "source": "zip",
       "subfolder": "quest-system-2.0.1.4_4/addons/quest_system"
     },
+    "proton_scatter":{
+      "url": "https://github.com/HungryProton/scatter/archive/refs/tags/4.0.zip",
+      "source": "zip",
+      "subfolder": "scatter-4.0/addons/proton_scatter"
+    },
     "road-generator": {
       "url": "https://github.com/TheDuckCow/godot-road-generator/archive/refs/tags/0.8.0.zip",
       "source": "zip",

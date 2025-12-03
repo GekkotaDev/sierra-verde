@@ -59,9 +59,12 @@ NetworkManager="*res://addons/nodot/autoload/NetworkManager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"rover": "res://data/characters/rover/rover.dch"
+}
 directories/dtl_directory={
 "end": "res://data/dialog/end.dtl",
+"relative": "res://scenes/locations/sky_springs_city/dialog/relative.dtl",
 "welcome": "res://data/dialog/welcome.dtl"
 }
 layout/style_directory={}

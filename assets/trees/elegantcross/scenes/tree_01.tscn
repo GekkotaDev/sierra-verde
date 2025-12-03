@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://ds721ybj4tt34"]
 
-[ext_resource type="Material" uid="uid://bpheagmwffg11" path="res://assets/trees/elegantcross/materials/tree01.tres" id="1_msurj"]
-[ext_resource type="Texture2D" uid="uid://b1cb3r666poen" path="res://assets/trees/elegantcross/textures/tree01.png" id="2_nwwnw"]
+[ext_resource type="Material" uid="uid://bpheagmwffg11" path="res://assets/trees/elegantcross/materials/tree01.tres" id="1_hgxgi"]
+[ext_resource type="Texture2D" uid="uid://b1cb3r666poen" path="res://assets/trees/elegantcross/textures/tree01.png" id="2_umwc6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t3qp6"]
 _surfaces = [{
@@ -27,7 +27,7 @@ _surfaces = [{
 "index_count": 156,
 "index_data": PackedByteArray("UAAVABYAUQBQABYAUgABAAIAUwBSAAIAVAAFAAYAVQBUAAYAVgAJAAoAVwBWAAoAWAANAA4AWQBYAA4AWgASABMAWwBaABMAAABcAF0AAwAAAF0ABABeAF8ABwAEAF8ACABgAGEACwAIAGEADABiAGMADwAMAGMAEAARAGQAZQAQAGQAFABmAGcAFwAUAGcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkALwBoACsAKwBoAC0ALgBoAC8ALQBoACoALABoAC4AKgBoACwAMAAxADIAMQAzADIANAA1ADYANQA3ADYAOAA5ADoAOQA7ADoAPAA9AD4APQA/AD4AQABBAEIAQQBDAEIARABFAEYARQBHAEYASABJAEoASQBLAEoATABNAE4ATQBPAE4A"),
 "lods": [0.1101648, PackedByteArray("AAABAAIAAwAAAAIABAAFAAYABwAEAAYACAAJAAoACwAIAAoADAANAA4ADwAMAA4AEAARABIAEwAQABIAFAAVABYAFwAUABYAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQArACoALAArAC4ALgArAC8AMAAxADIAMQAzADIANAA1ADYANQA3ADYAOAA5ADoAOQA7ADoAPAA9AD4APQA/AD4AQABBAEIAQQBDAEIARABFAEYARQBHAEYASABJAEoASQBLAEoATABNAE4ATQBPAE4A")],
-"material": ExtResource("1_msurj"),
+"material": ExtResource("1_hgxgi"),
 "name": "tree01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -38,8 +38,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t3qp6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lmub"]
-transparency = 1
-albedo_texture = ExtResource("2_nwwnw")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_umwc6")
+roughness = 0.0
 texture_filter = 0
 
 [node name="Tree01" type="MeshInstance3D"]

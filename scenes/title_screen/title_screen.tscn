@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cd7xojghs8q88" path="res://nodes/router_node.gd" id="1_d6x3v"]
 [ext_resource type="Texture2D" uid="uid://cjhix8hno6b6r" path="res://scenes/title_screen/backdrop.png" id="2_d6x3v"]
 [ext_resource type="Texture2D" uid="uid://ss41ybbwufbx" path="res://scenes/title_screen/logomark.png" id="3_5uxxq"]
-[ext_resource type="Theme" uid="uid://d04wd0y4ej4f" path="res://resources/themes/theme.tres" id="4_cxcmr"]
+[ext_resource type="Theme" uid="uid://d04wd0y4ej4f" path="res://views/themes/theme.tres" id="4_cxcmr"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -54,4 +54,6 @@ layout_mode = 2
 [node name="Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_cxcmr")
-text = "PRESS ANY BUTTON"
+text = "PLAY DEMO"
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed" binds= ["play"]]

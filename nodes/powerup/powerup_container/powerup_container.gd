@@ -1,11 +1,14 @@
 extends Node3D
 
+@export var _mesh: MeshInstance3D
+
+@export var mesh: ArrayMesh
 @export var collision_area: Area3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    pass
+    _mesh.mesh = mesh
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -45,6 +45,10 @@ permissions:
 
 jobs:
   pre-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: NOOP
+        run: echo 'foo'
 
   build-windows-x86:
     needs: [pre-test]

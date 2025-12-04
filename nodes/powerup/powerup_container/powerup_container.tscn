@@ -36,9 +36,10 @@ stencil_outline_thickness = 0.25
 [sub_resource type="BoxShape3D" id="BoxShape3D_1yvf6"]
 size = Vector3(2, 2, 2)
 
-[node name="PowerupContainer" type="Node3D" node_paths=PackedStringArray("_mesh")]
+[node name="PowerupContainer" type="Node3D" node_paths=PackedStringArray("_mesh", "collision_area")]
 script = ExtResource("1_1yvf6")
 _mesh = NodePath("MeshInstance3D")
+collision_area = NodePath("Area3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.70710677, 0, -0.70710677, -0.49999997, 0.70710677, -0.49999997, 0.49999997, 0.70710677, 0.49999997, 0, 0, 0)

@@ -79,34 +79,35 @@ script = ExtResource("3_csu36")
 mode = 0
 textures = [[ExtResource("12_tr740")], [ExtResource("13_e3vn1")]]
 
-[sub_resource type="Resource" id="Resource_6d6sf"]
+[sub_resource type="Resource" id="Resource_e3vn1"]
 script = ExtResource("43_5ppqc")
 amount = 2000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_tr740"]
+[sub_resource type="Resource" id="Resource_4j6jj"]
 script = ExtResource("44_isw1e")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_e3vn1"]
+[sub_resource type="Resource" id="Resource_qkncs"]
 script = ExtResource("45_7x140")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
+use_computeshader = false
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_4j6jj"]
+[sub_resource type="Resource" id="Resource_x6s8g"]
 script = ExtResource("46_6d6sf")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_qkncs"]
+[sub_resource type="Resource" id="Resource_582bb"]
 script = ExtResource("41_vk8cc")
-stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_6d6sf"), SubResource("Resource_tr740"), SubResource("Resource_e3vn1"), SubResource("Resource_4j6jj")])
+stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_e3vn1"), SubResource("Resource_4j6jj"), SubResource("Resource_qkncs"), SubResource("Resource_x6s8g")])
 
 [sub_resource type="Resource" id="Resource_uq6bw"]
 script = ExtResource("46_tr740")
@@ -163,6 +164,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_1msoc")
 
 [node name="DynamicSky3D" parent="WorldViewportContainer/WorldSubViewport" instance=ExtResource("1_l8430")]
+compositor = null
 
 [node name="LightmapGI" type="LightmapGI" parent="WorldViewportContainer/WorldSubViewport/DynamicSky3D"]
 
@@ -196,6 +198,7 @@ camera = NodePath("../Camera3D")
 
 [node name="Rain3D" type="Node3D" parent="WorldViewportContainer/VehicleController"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.999998, 8, -18.000002)
+visible = false
 script = ExtResource("7_fj3cp")
 amount = 500
 metadata/_custom_type_script = "uid://ci65kvcftuha"
@@ -224,7 +227,8 @@ metadata/_custom_type_script = "uid://c551q81ygcwkr"
 [node name="ProtonScatter" type="Node3D" parent="WorldViewportContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 287)
 script = ExtResource("40_jy57t")
-modifier_stack = SubResource("Resource_qkncs")
+render_mode = 2
+modifier_stack = SubResource("Resource_582bb")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dyfdj67xm3pae"
@@ -447,6 +451,7 @@ skeleton = NodePath("../..")
 
 [node name="BuildingTypeG" type="MeshInstance3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 197, 0, 260)
+visible = false
 mesh = ExtResource("24_id3xx")
 surface_material_override/1 = SubResource("StandardMaterial3D_7x140")
 

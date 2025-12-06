@@ -190,8 +190,9 @@
 	},
 	"nodes": [
 		{
+			"export_last_target": "Godot/Godot 4 ORM",
 			"export_paths": {
-
+				"Godot/Godot 4 ORM": "D:/jerem/Code/Games/Godot/Projects/Action RPG Driving Game/resources/materials/rock/"
 			},
 			"name": "Material",
 			"node_position": {

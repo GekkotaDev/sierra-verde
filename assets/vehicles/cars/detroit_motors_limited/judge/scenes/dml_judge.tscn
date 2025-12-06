@@ -1,14 +1,12 @@
-[gd_scene load_steps=63 format=4 uid="uid://c5jichmbbdws8"]
+[gd_scene load_steps=74 format=4 uid="uid://c5jichmbbdws8"]
 
+[ext_resource type="Script" uid="uid://ch2g8k20l0xfv" path="res://nodes/vehicle/vehicle_platform.gd" id="1_8x3j8"]
 [ext_resource type="Texture2D" uid="uid://dum2acwvjnot6" path="res://assets/vehicles/cars/detroit_motors_limited/judge/models/colormap.png" id="1_suqwu"]
 [ext_resource type="Script" uid="uid://c1jay85tn50a2" path="res://modules/gevp_extensions/middleware/middlewares/idle_middleware.gd" id="2_cyxdl"]
-[ext_resource type="Script" uid="uid://ekx0uoovoei0" path="res://modules/gevp_extensions/vehicle_chassis.gd" id="2_xsrwh"]
 [ext_resource type="Script" uid="uid://dqgcpepuk2fc2" path="res://modules/gevp_extensions/middleware/middlewares/camera_middleware.gd" id="3_hv7os"]
 [ext_resource type="Script" uid="uid://yrlypmjanfhe" path="res://addons/gevp/scripts/wheel.gd" id="3_td1jw"]
 [ext_resource type="Script" uid="uid://cjwkprba6c2ag" path="res://modules/gevp_extensions/middleware/middlewares/wheelspin_middleware.gd" id="4_hv7os"]
 [ext_resource type="Script" uid="uid://c0onr4pkpuunr" path="res://modules/gevp_extensions/middleware/middlewares/impact_middleware.gd" id="4_nr6yc"]
-[ext_resource type="PackedScene" uid="uid://b2hlchrj4h2b7" path="res://addons/gevp/scenes/engine_sound.tscn" id="4_xx2vt"]
-[ext_resource type="AudioStream" uid="uid://ddmmbmcs27hvg" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/5000.wav" id="5_745jl"]
 [ext_resource type="Texture2D" uid="uid://cwaq8mhoq30il" path="res://assets/vehicles/cars/detroit_motors_limited/judge/models/texture_license.png" id="6_8x3j8"]
 [ext_resource type="Texture2D" uid="uid://dn8076xvti6q5" path="res://assets/vehicles/cars/detroit_motors_limited/judge/models/texture_chrome.png" id="7_rweh8"]
 [ext_resource type="AudioStream" uid="uid://blyllnd7tej20" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/idle.wav" id="7_xx2vt"]
@@ -22,9 +20,20 @@
 [ext_resource type="Script" uid="uid://cdhxtssp3srur" path="res://assets/vehicles/cars/detroit_motors_limited/judge/scripts/wheel_spin.gd" id="12_80kcv"]
 [ext_resource type="Texture2D" uid="uid://32wxjv16sod4" path="res://assets/vehicles/cars/detroit_motors_limited/judge/models/texture_shaker.png" id="12_k6gbp"]
 [ext_resource type="AudioStream" uid="uid://0ubaoxw72gi5" path="res://assets/vehicles/resources/audio/damage/crash_2.wav" id="13_65msh"]
+[ext_resource type="AudioStream" uid="uid://blvbdqo0jawst" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/2600.wav" id="15_q1lb6"]
+[ext_resource type="AudioStream" uid="uid://bc0uxscnlh5v6" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/3600.wav" id="17_q5ulw"]
+[ext_resource type="Script" uid="uid://bjntw5khn5k6d" path="res://nodes/vehicle/vehicle_audio.gd" id="17_rweh8"]
+[ext_resource type="AudioStream" uid="uid://dl4nha48ege73" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/4500.wav" id="18_lj0sm"]
+[ext_resource type="AudioStream" uid="uid://bw20dkyqk2cco" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/5300.wav" id="19_6swyl"]
+[ext_resource type="AudioStream" uid="uid://b5b344eqvihe6" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/5900.wav" id="20_iq8pf"]
+[ext_resource type="AudioStream" uid="uid://blvll624vf665" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/6500.wav" id="21_eaqu4"]
+[ext_resource type="AudioStream" uid="uid://46tbcd1le0w" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/7000.wav" id="22_o3ha1"]
+[ext_resource type="AudioStream" uid="uid://npc7nhvgpdsq" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/7400.wav" id="23_lvnsf"]
+[ext_resource type="AudioStream" uid="uid://dvtv8co25dpse" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/7800.wav" id="24_au8il"]
+[ext_resource type="AudioStream" uid="uid://7yhvondrcvru" path="res://assets/vehicles/cars/detroit_motors_limited/judge/sounds/8100.wav" id="25_py3r8"]
 
-[sub_resource type="Curve" id="Curve_suqwu"]
-_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.617978, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.692308), -1.4839, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_8x3j8"]
+_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.767241, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.758242), -2.03956, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_cyxdl"]
@@ -380,6 +389,14 @@ shadow_mesh = SubResource("ArrayMesh_levri")
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_65msh"]
 albedo_texture = ExtResource("1_suqwu")
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_rweh8"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_1kko7"]
+clip_count = 1
+clip_0/name = &"2600"
+clip_0/stream = SubResource("AudioStreamWAV_rweh8")
+clip_0/auto_advance = 0
+
 [sub_resource type="Gradient" id="Gradient_wywko"]
 offsets = PackedFloat32Array(0, 0.772152, 1)
 colors = PackedColorArray(1, 1, 1, 0.501961, 1, 1, 1, 0.501961, 1, 1, 1, 0)
@@ -419,24 +436,44 @@ radial_segments = 8
 rings = 4
 
 [node name="VehicleRigidBody" type="RigidBody3D" node_paths=PackedStringArray("middlewares", "front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
-script = ExtResource("2_xsrwh")
-middlewares = [NodePath("Middlewares/IdleMiddleware"), NodePath("Middlewares/CameraMiddleware"), NodePath("Middlewares/WheelspinMiddleware"), NodePath("Middlewares/ImpactMiddleware")]
+script = ExtResource("1_8x3j8")
+middlewares = [NodePath("Middlewares/CameraMiddleware"), NodePath("Middlewares/IdleMiddleware"), NodePath("Middlewares/ImpactMiddleware"), NodePath("Middlewares/WheelspinMiddleware")]
 front_left_wheel = NodePath("WheelFrontLeft")
 front_right_wheel = NodePath("WheelFrontRight")
 rear_left_wheel = NodePath("WheelRearLeft")
 rear_right_wheel = NodePath("WheelRearRight")
-stability_yaw_engage_angle = 0.1
+steering_slip_assist = 0.3
+countersteer_assist = 0.75
 stability_yaw_strength = 2.0
 stability_yaw_ground_multiplier = 4.0
-max_torque = 720.0
-max_rpm = 8300.0
-torque_curve = SubResource("Curve_suqwu")
-variable_torque_split = true
-front_variable_split = 0.5
-center_of_gravity_height_offset = -0.25
-front_damping_ratio = 0.6
-rear_damping_ratio = 0.6
-braking_grip_multiplier = 2.0
+max_torque = 597.0
+max_rpm = 8400.0
+idle_rpm = 950.0
+torque_curve = SubResource("Curve_8x3j8")
+motor_moment = 0.3
+gear_ratios = Array[float]([2.32, 1.69, 1.21, 1.0])
+final_drive = 3.25
+reverse_ratio = 3.28
+vehicle_mass = 1619.0
+front_weight_distribution = 0.53
+front_resting_ratio = 0.6
+front_damping_ratio = 0.5
+front_arb_ratio = 0.3
+front_toe = 0.005
+rear_resting_ratio = 0.6
+rear_damping_ratio = 0.5
+rear_toe = 0.005
+rear_beam_axle = true
+longitudinal_grip_ratio = {
+"Dirt": 0.56,
+"Grass": 0.8,
+"Road": 0.55
+}
+front_tire_radius = 0.355
+front_tire_width = 300.0
+rear_tire_radius = 0.355
+rear_tire_width = 300.0
+coefficient_of_drag = 0.38
 
 [node name="Middlewares" type="Node" parent="."]
 
@@ -458,43 +495,43 @@ crash_sound = NodePath("../../Sounds/CrashSound")
 script = ExtResource("4_hv7os")
 squeal_sound = NodePath("../../Sounds/SquealSound")
 
-[node name="Chassis2" type="Node3D" parent="."]
+[node name="Chassis" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Platform" type="Node3D" parent="Chassis2"]
+[node name="Platform" type="Node3D" parent="Chassis"]
 
-[node name="RearLicense" type="MeshInstance3D" parent="Chassis2/Platform"]
+[node name="RearLicense" type="MeshInstance3D" parent="Chassis/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, -2.4375)
 mesh = SubResource("ArrayMesh_y2264")
 skeleton = NodePath("")
 
-[node name="Chrome" type="Node3D" parent="Chassis2/Platform"]
+[node name="Chrome" type="Node3D" parent="Chassis/Platform"]
 
-[node name="GrillSplitter" type="MeshInstance3D" parent="Chassis2/Platform/Chrome"]
+[node name="GrillSplitter" type="MeshInstance3D" parent="Chassis/Platform/Chrome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.8125)
 mesh = SubResource("ArrayMesh_xl81b")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_galjs")
 
-[node name="FrontBumper" type="MeshInstance3D" parent="Chassis2/Platform/Chrome"]
+[node name="FrontBumper" type="MeshInstance3D" parent="Chassis/Platform/Chrome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9375, 0.375, 1.8125)
 mesh = SubResource("ArrayMesh_s3ayh")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_0vtl5")
 
-[node name="RearBumper" type="MeshInstance3D" parent="Chassis2/Platform/Chrome"]
+[node name="RearBumper" type="MeshInstance3D" parent="Chassis/Platform/Chrome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9375, 0.4375, -2.4375)
 mesh = SubResource("ArrayMesh_2r7rl")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_q1lb6")
 
-[node name="Body" type="MeshInstance3D" parent="Chassis2/Platform"]
+[node name="Body" type="MeshInstance3D" parent="Chassis/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.75, 0)
 mesh = SubResource("ArrayMesh_etau0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_iq8pf")
 
-[node name="HoodShaker" type="MeshInstance3D" parent="Chassis2/Platform"]
+[node name="HoodShaker" type="MeshInstance3D" parent="Chassis/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 1)
 mesh = SubResource("ArrayMesh_gm0ex")
 skeleton = NodePath("")
@@ -565,10 +602,27 @@ surface_material_override/0 = SubResource("ORMMaterial3D_65msh")
 
 [node name="Sounds" type="Node3D" parent="."]
 
-[node name="EngineRevSound" parent="Sounds" node_paths=PackedStringArray("vehicle") instance=ExtResource("4_xx2vt")]
-stream = ExtResource("5_745jl")
+[node name="EngineRevSound" type="AudioStreamPlayer3D" parent="Sounds" node_paths=PackedStringArray("vehicle")]
+stream = ExtResource("15_q1lb6")
+autoplay = true
+emission_angle_enabled = true
+doppler_tracking = 2
+script = ExtResource("17_rweh8")
+rpm_audio = Dictionary[int, AudioStream]({
+2600: ExtResource("15_q1lb6"),
+3600: ExtResource("17_q5ulw"),
+4500: ExtResource("18_lj0sm"),
+5300: ExtResource("19_6swyl"),
+5900: ExtResource("20_iq8pf"),
+6500: ExtResource("21_eaqu4"),
+7000: ExtResource("22_o3ha1"),
+7400: ExtResource("23_lvnsf"),
+7800: ExtResource("24_au8il"),
+8100: ExtResource("25_py3r8")
+})
 vehicle = NodePath("../..")
-sample_rpm = 5500.0
+sample_rpm = 2600.0
+metadata/_custom_type_script = "uid://bjntw5khn5k6d"
 
 [node name="EngineIdleSound" type="AudioStreamPlayer3D" parent="Sounds"]
 stream = ExtResource("7_xx2vt")
@@ -587,6 +641,9 @@ max_polyphony = 2
 
 [node name="CrashSound" type="AudioStreamPlayer3D" parent="Sounds"]
 stream = ExtResource("13_65msh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = SubResource("AudioStreamInteractive_1kko7")
 
 [node name="Smoke" type="GPUParticles3D" parent="." node_paths=PackedStringArray("vehicle")]
 emitting = false

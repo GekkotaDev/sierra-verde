@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://mpu8056ggc0w"]
+[gd_scene load_steps=75 format=3 uid="uid://mpu8056ggc0w"]
 
 [ext_resource type="Shader" uid="uid://tstbo6mjsxrf" path="res://assets/viewports/world_viewport/edge_detection.gdshader" id="1_3hei7"]
 [ext_resource type="Script" uid="uid://c551q81ygcwkr" path="res://addons/zylann.hterrain/hterrain.gd" id="1_cmnks"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ddvkg08abyasm" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-f.obj" id="23_bkquo"]
 [ext_resource type="ArrayMesh" uid="uid://bvwabbgjk6qry" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-g.obj" id="24_id3xx"]
 [ext_resource type="ArrayMesh" uid="uid://ehavo2ynmxde" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-h.obj" id="25_dosbr"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="26_4j6jj"]
 [ext_resource type="ArrayMesh" uid="uid://8jciyulwduix" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-i.obj" id="26_vt2wg"]
 [ext_resource type="ArrayMesh" uid="uid://d11qw1netrgho" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-j.obj" id="27_jy57t"]
 [ext_resource type="ArrayMesh" uid="uid://cx6n1tut566aq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-k.obj" id="28_vk8cc"]
@@ -79,39 +80,61 @@ script = ExtResource("3_csu36")
 mode = 0
 textures = [[ExtResource("12_tr740")], [ExtResource("13_e3vn1")]]
 
-[sub_resource type="Resource" id="Resource_6d6sf"]
+[sub_resource type="Resource" id="Resource_4j6jj"]
 script = ExtResource("43_5ppqc")
 amount = 2000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_tr740"]
+[sub_resource type="Resource" id="Resource_qkncs"]
 script = ExtResource("44_isw1e")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_e3vn1"]
+[sub_resource type="Resource" id="Resource_x6s8g"]
 script = ExtResource("45_7x140")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_4j6jj"]
+[sub_resource type="Resource" id="Resource_582bb"]
 script = ExtResource("46_6d6sf")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_qkncs"]
+[sub_resource type="Resource" id="Resource_oox0b"]
 script = ExtResource("41_vk8cc")
-stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_6d6sf"), SubResource("Resource_tr740"), SubResource("Resource_e3vn1"), SubResource("Resource_4j6jj")])
+stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_4j6jj"), SubResource("Resource_qkncs"), SubResource("Resource_x6s8g"), SubResource("Resource_582bb")])
 
 [sub_resource type="Resource" id="Resource_uq6bw"]
 script = ExtResource("46_tr740")
 size = Vector3(500, 1, 500)
 metadata/_custom_type_script = "uid://cmiodm5bec4ay"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3vn1"]
+load_path = "res://.godot/imported/stylized_dirt_albedo.png-a48ad271f98809494dfbacd4399a7998.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4j6jj"]
+load_path = "res://.godot/imported/stylized_dirt_emission.png-23277e4a3cb05584edaaa871ddecd51d.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qkncs"]
+load_path = "res://.godot/imported/stylized_dirt_heightmap.png-acdab37d9f1776eff7325979d3d6031c.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x6s8g"]
+load_path = "res://.godot/imported/stylized_dirt_normal.png-a077940a2822eb885fa09febd4871994.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uq6bw"]
+albedo_texture = SubResource("CompressedTexture2D_e3vn1")
+emission_enabled = true
+emission_texture = SubResource("CompressedTexture2D_4j6jj")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_x6s8g")
+heightmap_enabled = true
+heightmap_texture = SubResource("CompressedTexture2D_qkncs")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yugqs"]
 
@@ -166,7 +189,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_1msoc")
 
 [node name="LightmapGI" type="LightmapGI" parent="WorldViewportContainer/WorldSubViewport/DynamicSky3D"]
 
-[node name="VehicleController" type="Node3D" parent="WorldViewportContainer" node_paths=PackedStringArray("vehicle_node")]
+[node name="VehicleController" type="Node3D" parent="WorldViewportContainer" node_paths=PackedStringArray("vehicle_node") groups=["entities/players"]]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 166, 1, 243)
 script = ExtResource("10_l8430")
 vehicle_node = NodePath("VehicleRigidBody")
@@ -190,7 +213,7 @@ script = ExtResource("11_jksds")
 follow_distance = 6
 follow_this = NodePath("../VehicleRigidBody")
 
-[node name="VehicleRigidBody" parent="WorldViewportContainer/VehicleController" node_paths=PackedStringArray("camera") instance=ExtResource("12_fj3cp")]
+[node name="VehicleRigidBody" parent="WorldViewportContainer/VehicleController" node_paths=PackedStringArray("camera") groups=["entities/players"] instance=ExtResource("12_fj3cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.999998, 0, -18.000002)
 camera = NodePath("../Camera3D")
 
@@ -224,7 +247,7 @@ metadata/_custom_type_script = "uid://c551q81ygcwkr"
 [node name="ProtonScatter" type="Node3D" parent="WorldViewportContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 287)
 script = ExtResource("40_jy57t")
-modifier_stack = SubResource("Resource_qkncs")
+modifier_stack = SubResource("Resource_oox0b")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dyfdj67xm3pae"
@@ -247,10 +270,12 @@ path = "uid://c7nhwmnoqo4lr"
 [node name="RoadManager" type="Node3D" parent="WorldViewportContainer"]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 263)
 script = ExtResource("7_c3prm")
+material_resource = SubResource("StandardMaterial3D_uq6bw")
 metadata/_custom_type_script = "uid://bbahb0bjns7me"
 
 [node name="Road_001" type="Node3D" parent="WorldViewportContainer/RoadManager"]
 script = ExtResource("8_c3prm")
+material_resource = ExtResource("26_4j6jj")
 use_lowpoly_preview = true
 edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])

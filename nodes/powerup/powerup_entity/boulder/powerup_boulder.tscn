@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://dw208l2576mc8"]
+
+[ext_resource type="Script" uid="uid://deglykfjhoi0w" path="res://nodes/powerup/powerup_entity/boulder/powerup_boulder.gd" id="1_toer3"]
+[ext_resource type="Texture2D" uid="uid://5rx0smx3eac0" path="res://resources/materials/rock/_albedo.png" id="2_wai63"]
+[ext_resource type="Texture2D" uid="uid://k5gavejstmet" path="res://resources/materials/rock/_heightmap.png" id="3_t0p3a"]
+[ext_resource type="Texture2D" uid="uid://bicmoert41svv" path="res://resources/materials/rock/_normal.png" id="4_g5wxy"]
+[ext_resource type="Texture2D" uid="uid://mi0r0ntbr8ba" path="res://resources/materials/rock/_orm.png" id="5_ytlcy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wai63"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0p3a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_toer3"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_gl7c7"]
+albedo_texture = ExtResource("2_wai63")
+orm_texture = ExtResource("5_ytlcy")
+normal_enabled = true
+normal_texture = ExtResource("4_g5wxy")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_t0p3a")
+texture_filter = 0
+
+[node name="PowerupBoulder" type="Area3D" node_paths=PackedStringArray("entity")]
+top_level = true
+script = ExtResource("1_toer3")
+entity = NodePath("RigidBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_wai63")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_t0p3a")
+disabled = true
+
+[node name="Mesh" type="Node3D" parent="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/Mesh"]
+mesh = SubResource("BoxMesh_toer3")
+surface_material_override/0 = SubResource("ORMMaterial3D_gl7c7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D/Mesh"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0.49999997, 0.70710677, 0.49999997, 0.49999997, -0.70710677, 0.49999997, 0, 0, 0)
+mesh = SubResource("BoxMesh_toer3")
+surface_material_override/0 = SubResource("ORMMaterial3D_gl7c7")

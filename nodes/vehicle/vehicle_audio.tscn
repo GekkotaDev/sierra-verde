@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxvwtw210sda3"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_4opvm"]
+clip_count = 2
+clip_0/name = &""
+clip_0/auto_advance = 0
+clip_1/name = &""
+clip_1/auto_advance = 0
+
+[node name="VehicleAudio" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamInteractive_4opvm")

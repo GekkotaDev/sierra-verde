@@ -4,5 +4,5 @@ extends Control
 
 
 func _ready() -> void:
-    SoundManager.stop_music(1.0)
-    animation_player.play("loader")
+	SoundManager.stop_music(1.0)
+	animation_player.play("loader")

@@ -88,3 +88,6 @@ addons/*
 
 # GDUnit4
 reports
+
+# 
+dist

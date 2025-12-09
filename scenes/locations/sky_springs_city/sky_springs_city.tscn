@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://mpu8056ggc0w"]
+[gd_scene load_steps=77 format=3 uid="uid://mpu8056ggc0w"]
 
 [ext_resource type="Shader" uid="uid://tstbo6mjsxrf" path="res://assets/viewports/world_viewport/edge_detection.gdshader" id="1_3hei7"]
 [ext_resource type="Script" uid="uid://c551q81ygcwkr" path="res://addons/zylann.hterrain/hterrain.gd" id="1_cmnks"]
@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://c5jichmbbdws8" path="res://assets/vehicles/cars/detroit_motors_limited/judge/scenes/dml_judge.tscn" id="12_fj3cp"]
 [ext_resource type="Texture2D" uid="uid://cgv62ht126cqg" path="res://scenes/locations/sky_springs_city/sky_springs_city_slot0_albedo_bump.png" id="12_tr740"]
 [ext_resource type="Texture2D" uid="uid://c27foh8ak2qw2" path="res://scenes/locations/sky_springs_city/sky_springs_city_slot0_normal_roughness.png" id="13_e3vn1"]
-[ext_resource type="ArrayMesh" uid="uid://dt8v88p58onj1" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/road-asphalt-pavement.obj" id="17_jksds"]
+[ext_resource type="Texture2D" uid="uid://liag063wl7gt" path="res://resources/materials/stylized_dirt/stylized_dirt_albedo.png" id="13_x6s8g"]
+[ext_resource type="Texture2D" uid="uid://73im6lrx4c06" path="res://resources/materials/stylized_dirt/stylized_dirt_normal.png" id="15_uq6bw"]
 [ext_resource type="ArrayMesh" uid="uid://dgkhbg6g5f6pa" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-a.obj" id="18_6qhsl"]
 [ext_resource type="ArrayMesh" uid="uid://u4hg2plkof0j" path="res://assets/Kenney/City Kit - Roads/Models/OBJ format/road-roundabout-barrier.obj" id="18_csu36"]
-[ext_resource type="Texture2D" uid="uid://b35ct4iealhni" path="res://assets/Kenney/Retro Urban Kit/Models/OBJ format/Textures/tiles.png" id="18_fj3cp"]
 [ext_resource type="ArrayMesh" uid="uid://b2wv2nb2t53aq" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-b.obj" id="19_fnuou"]
 [ext_resource type="ArrayMesh" uid="uid://bi3hvia0q7c3t" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-c.obj" id="20_6ktio"]
 [ext_resource type="ArrayMesh" uid="uid://bygaebq0gob71" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-d.obj" id="21_8os35"]
@@ -41,7 +41,6 @@
 [ext_resource type="ArrayMesh" uid="uid://tb7chqexx6em" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-s.obj" id="36_qkncs"]
 [ext_resource type="ArrayMesh" uid="uid://b4fpisrgtjyeh" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-t.obj" id="37_x6s8g"]
 [ext_resource type="ArrayMesh" uid="uid://hv8cx7kchr6b" path="res://assets/Kenney/City Kit - Suburban/Models/OBJ format/building-type-u.obj" id="38_uq6bw"]
-[ext_resource type="Texture2D" uid="uid://bt5wq873fyfba" path="res://assets/Kenney/City Kit - Suburban/Models/Textures/variation-a.png" id="40_isw1e"]
 [ext_resource type="Script" uid="uid://dyfdj67xm3pae" path="res://addons/proton_scatter/src/scatter.gd" id="40_jy57t"]
 [ext_resource type="Script" uid="uid://buesvfcnk5aqm" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="41_vk8cc"]
 [ext_resource type="Script" uid="uid://cya71nhtmx8e0" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="42_5ppqc"]
@@ -54,7 +53,9 @@
 [ext_resource type="Script" uid="uid://cmiodm5bec4ay" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="46_tr740"]
 [ext_resource type="Script" uid="uid://bvprq300pubgu" path="res://scenes/locations/sky_springs_city/scripts/suv.gd" id="51_6d6sf"]
 [ext_resource type="ArrayMesh" uid="uid://fgrs3gt07er5" path="res://assets/Kenney/Car Kit/Models/OBJ format/suv.obj" id="52_tr740"]
+[ext_resource type="Texture2D" uid="uid://daemfdd8fc0jc" path="res://assets/Kenney/City Kit - Suburban/Models/Textures/variation-b.png" id="54_582bb"]
 [ext_resource type="PackedScene" uid="uid://df37xqkrpsxg5" path="res://nodes/powerup/powerup_container/powerup_container.tscn" id="54_e3vn1"]
+[ext_resource type="ArrayMesh" uid="uid://c0y57m38waco4" path="res://assets/Kenney/Car Kit/Models/OBJ format/tractor-police.obj" id="57_uq6bw"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c3prm"]
 flip_faces = true
@@ -78,36 +79,59 @@ dof_blur_near_transition = 16.0
 [sub_resource type="Resource" id="Resource_xbskg"]
 script = ExtResource("3_csu36")
 mode = 0
-textures = [[ExtResource("12_tr740")], [ExtResource("13_e3vn1")]]
+textures = [[ExtResource("12_tr740"), ExtResource("13_x6s8g")], [ExtResource("13_e3vn1"), ExtResource("15_uq6bw")]]
 
-[sub_resource type="Resource" id="Resource_4j6jj"]
+<<<<<<< HEAD
+[sub_resource type="Resource" id="Resource_qkncs"]
+=======
+[sub_resource type="Resource" id="Resource_e3vn1"]
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 script = ExtResource("43_5ppqc")
 amount = 2000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_qkncs"]
+<<<<<<< HEAD
+[sub_resource type="Resource" id="Resource_x6s8g"]
+=======
+[sub_resource type="Resource" id="Resource_4j6jj"]
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 script = ExtResource("44_isw1e")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(5, 360, 5)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_x6s8g"]
+<<<<<<< HEAD
+[sub_resource type="Resource" id="Resource_582bb"]
+=======
+[sub_resource type="Resource" id="Resource_qkncs"]
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 script = ExtResource("45_7x140")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
+use_computeshader = false
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_582bb"]
+<<<<<<< HEAD
+[sub_resource type="Resource" id="Resource_oox0b"]
+=======
+[sub_resource type="Resource" id="Resource_x6s8g"]
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 script = ExtResource("46_6d6sf")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_oox0b"]
+<<<<<<< HEAD
+[sub_resource type="Resource" id="Resource_kl4rp"]
 script = ExtResource("41_vk8cc")
-stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_4j6jj"), SubResource("Resource_qkncs"), SubResource("Resource_x6s8g"), SubResource("Resource_582bb")])
+stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_qkncs"), SubResource("Resource_x6s8g"), SubResource("Resource_582bb"), SubResource("Resource_oox0b")])
+=======
+[sub_resource type="Resource" id="Resource_582bb"]
+script = ExtResource("41_vk8cc")
+stack = Array[ExtResource("42_5ppqc")]([SubResource("Resource_e3vn1"), SubResource("Resource_4j6jj"), SubResource("Resource_qkncs"), SubResource("Resource_x6s8g")])
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 
 [sub_resource type="Resource" id="Resource_uq6bw"]
 script = ExtResource("46_tr740")
@@ -136,19 +160,20 @@ heightmap_enabled = true
 heightmap_texture = SubResource("CompressedTexture2D_qkncs")
 texture_filter = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yugqs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij4oa"]
-albedo_texture = ExtResource("18_fj3cp")
-uv1_scale = Vector3(8, 8, 8)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oox0b"]
+albedo_texture = ExtResource("54_582bb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x140"]
 diffuse_mode = 3
 specular_mode = 1
-albedo_texture = ExtResource("40_isw1e")
+albedo_texture = ExtResource("54_582bb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oox0b"]
 size = Vector3(1.5, 2.5, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qkncs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x6s8g"]
 
 [node name="SkySpringsCity" type="Node3D"]
 
@@ -186,6 +211,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_1msoc")
 
 [node name="DynamicSky3D" parent="WorldViewportContainer/WorldSubViewport" instance=ExtResource("1_l8430")]
+compositor = null
 
 [node name="LightmapGI" type="LightmapGI" parent="WorldViewportContainer/WorldSubViewport/DynamicSky3D"]
 
@@ -219,6 +245,7 @@ camera = NodePath("../Camera3D")
 
 [node name="Rain3D" type="Node3D" parent="WorldViewportContainer/VehicleController"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.999998, 8, -18.000002)
+visible = false
 script = ExtResource("7_fj3cp")
 amount = 500
 metadata/_custom_type_script = "uid://ci65kvcftuha"
@@ -247,7 +274,12 @@ metadata/_custom_type_script = "uid://c551q81ygcwkr"
 [node name="ProtonScatter" type="Node3D" parent="WorldViewportContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 287)
 script = ExtResource("40_jy57t")
-modifier_stack = SubResource("Resource_oox0b")
+<<<<<<< HEAD
+modifier_stack = SubResource("Resource_kl4rp")
+=======
+render_mode = 2
+modifier_stack = SubResource("Resource_582bb")
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dyfdj67xm3pae"
@@ -268,7 +300,7 @@ path = "uid://c7nhwmnoqo4lr"
 [node name="Buildings" type="Node3D" parent="WorldViewportContainer"]
 
 [node name="RoadManager" type="Node3D" parent="WorldViewportContainer"]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 263)
+transform = Transform3D(0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, 195, 0, 263)
 script = ExtResource("7_c3prm")
 material_resource = SubResource("StandardMaterial3D_uq6bw")
 metadata/_custom_type_script = "uid://bbahb0bjns7me"
@@ -309,6 +341,37 @@ lanes = Array[int]([5, 5])
 prior_mag = 16.0
 next_mag = 16.0
 next_pt_init = NodePath("../RP_002")
+
+[node name="Road_002" type="Node3D" parent="WorldViewportContainer/RoadManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 89)
+script = ExtResource("8_c3prm")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RP_001"), NodePath("RP_002")])
+edge_rp_local_dirs = Array[int]([1, 0])
+
+[node name="RP_001" type="Node3D" parent="WorldViewportContainer/RoadManager/Road_002"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 14, 0, -8)
+script = ExtResource("9_1msoc")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+next_pt_init = NodePath("../RP_002")
+
+[node name="RP_002" type="Node3D" parent="WorldViewportContainer/RoadManager/Road_002"]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -62, 1, 29)
+script = ExtResource("9_1msoc")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 16.0
+next_mag = 16.0
+prior_pt_init = NodePath("../RP_001")
+
+[node name="BuildingTypeP2" type="MeshInstance3D" parent="WorldViewportContainer"]
+transform = Transform3D(-2.6226832e-07, 0, -6, 0, 6, 0, 6, 0, -2.6226832e-07, 444.53415, 0, 115)
+mesh = ExtResource("33_tr740")
+skeleton = NodePath("../..")
 
 [node name="InterfaceViewportContainer" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -351,12 +414,6 @@ offset_right = 73.0
 offset_bottom = 31.0
 text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
-
-[node name="RoadAsphaltPavement" type="MeshInstance3D" parent="."]
-transform = Transform3D(35.2, 0, 0, 0, 16, 0, 0, 0, 35.2, 80, 0.1, 82)
-mesh = ExtResource("17_jksds")
-surface_material_override/0 = SubResource("StandardMaterial3D_yugqs")
-surface_material_override/1 = SubResource("StandardMaterial3D_ij4oa")
 
 [node name="RoadRoundaboutBarrier" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 107)
@@ -470,8 +527,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, -8)
 mesh = ExtResource("38_uq6bw")
 skeleton = NodePath("../..")
 
-[node name="BuildingTypeG" type="MeshInstance3D" parent="."]
+[node name="BuildingTypeH2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.196152, 0, -3, 0, 6, 0, 3, 0, 5.196152, 163, 0, 383)
+mesh = ExtResource("25_dosbr")
+surface_material_override/1 = SubResource("StandardMaterial3D_oox0b")
+
+[node name="BuildingHomeRover" type="MeshInstance3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 197, 0, 260)
+visible = false
 mesh = ExtResource("24_id3xx")
 surface_material_override/1 = SubResource("StandardMaterial3D_7x140")
 
@@ -485,6 +548,7 @@ freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("51_6d6sf")
+dialog = "relative"
 
 [node name="SUVMesh" type="MeshInstance3D" parent="SUVRigidBody3D"]
 mesh = ExtResource("52_tr740")
@@ -493,5 +557,80 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SUVRigidBody3D"]
 shape = SubResource("BoxShape3D_oox0b")
 
+[node name="SUVRigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 162, 0.25, 377)
+can_sleep = false
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("51_6d6sf")
+
+[node name="SUVMesh" type="MeshInstance3D" parent="SUVRigidBody3D2"]
+mesh = ExtResource("57_uq6bw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SUVRigidBody3D2"]
+shape = SubResource("BoxShape3D_oox0b")
+
 [node name="PowerupContainer" parent="." instance=ExtResource("54_e3vn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197, 1, 324)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 5, 32, 1, 37)
+mesh = SubResource("BoxMesh_qkncs")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 484, 0, 473)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -2, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -4, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -6, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -8, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -10, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -12, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -14, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -16, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -18, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -20, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -22, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.6071804e-07, 1.0000002, 0, -10.540001, -4.37114e-08, -24, 0, 0)
+mesh = SubResource("CapsuleMesh_x6s8g")

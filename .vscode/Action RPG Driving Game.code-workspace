@@ -42,6 +42,7 @@
         "yaml.customTags": [
             "!ENV sequence",
             "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
-        ]
+        ],
+        "godotTools.editorPath.godot4": "D:\\Program Files\\Godots\\versions\\Godot_v4_5_1-stable_mono_win64\\Godot_v4.5.1-stable_mono_win64\\Godot_v4.5.1-stable_mono_win64_console.exe"
     }
 }

@@ -1,10 +1,12 @@
 extends RigidBody3D
 
+@export var dialog: String
+
 @onready var debounced := Debouncer.new(
 	func():
 		if Dialogic.current_timeline:
 			return
-		Dialogic.start("relative"),
+		Dialogic.start(dialog),
 	0.1
 )
 

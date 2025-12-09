@@ -10,8 +10,13 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+<<<<<<< HEAD
 	if mesh and _mesh:
 		_mesh.mesh = mesh
+=======
+    if mesh:
+        _mesh.mesh = mesh
+>>>>>>> f0a87738717567914511fc94560850307bd5f696
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

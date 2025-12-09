@@ -48,9 +48,11 @@ albedo_texture = ExtResource("2_kt5gv")
 metallic_specular = 0.0
 roughness = 0.0
 texture_filter = 0
+disable_receive_shadows = true
 
 [node name="Tree15" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.6292067e-07, 0, -1.6292067e-07, 1, 0, 0, 0)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_8xpma")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cruvy")

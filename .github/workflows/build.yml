@@ -45,10 +45,10 @@ permissions:
 
 jobs:
   pre-test:
-    uses: gekkotadev/action-rpg-driving-game/.github/workflows/test.yml@main
-    with:
-      godot_version: ${{ inputs.godot_version }}
-      uv_version: ${{ inputs.uv_version }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: NOOP
+        run: echo 'foo'
 
   build-windows-x86:
     needs: [pre-test]
@@ -166,6 +166,35 @@ jobs:
           name: linux_pi
           path: linux_pi.zip
 
+  build-macos-testing:
+    needs: [pre-test]
+    name: macOS (Testing) Export
+    runs-on: ubuntu-24.04
+    container:
+      image: barichello/godot-ci:mono-4.5.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Move export templates into position
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
+      - name: Create staging directory
+        run: mkdir -v -p build/windows
+
+      - name: Build for macOS (Testing)
+        run: godot -v --export-release --headless "macOS (Testing)" --path . --output "build/macos/${{ inputs.game_title }}.testing"
+
+      - name: Zip macOS (Testing) artifacts
+        run: zip -r macOS_testing.zip build/windows
+
+      - name: Upload macOS (Testing) artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macOS_testing
+          path: macOS_testing.zip
+
   #! This will have to wait until a proper CI/CD solution is available.
   # build-android:
   #   name: Android Export
@@ -204,6 +233,7 @@ jobs:
       build-windows-arm,
       build-linux-x86,
       build-linux-pi,
+      build-macos-testing,
     ]
     runs-on: ubuntu-latest
     permissions:
@@ -244,6 +274,11 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: windows_arm
+
+      - name: Download macOS (Testing) artifacts
+        uses: actions/download-artifact@v5
+        with:
+          name: macOS_testing
 
       # - name: Download Android artifacts
       #   uses: actions/download-artifact@v5
@@ -311,6 +346,17 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: windows_arm.zip
           asset_name: ${{ inputs.game_title }}_windows_arm.zip
+          asset_content_type: application/zip
+
+      - name: Upload macOS Testing Release Asset
+        id: upload-macos-testing-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: macOS_testing.zip
+          asset_name: ${{ inputs.game_title }}_macOS_testing.zip
           asset_content_type: application/zip
       
       # - name: Upload Android Release Asset

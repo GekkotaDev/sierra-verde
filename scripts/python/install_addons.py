@@ -41,6 +41,11 @@ DEPENDENCIES = {
         repo="gh:mathrick/godot-quick-layout-changer",
         subdirectory="addons/quick_layout_changer",
     ),
+    "resources_spreadsheet_view": Git(
+        repo="gh:don-tnowe/godot-resources-as-sheets-plugin",
+        subdirectory="addons/resources_spreadsheet_view",
+        vcs_ref="Godot-4",
+    ),
     "shaderV": Git(
         repo="gh:arkology/ShaderV",
         subdirectory="addons/shaderV",

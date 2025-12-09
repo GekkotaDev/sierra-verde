@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://drgesofv0e76p"]
+
+[ext_resource type="Script" uid="uid://du6gs2vwe7em4" path="res://data/quests/meet_the_locals/meet_the_locals.gd" id="1_74rc2"]
+
+[resource]
+script = ExtResource("1_74rc2")
+metadata/_custom_type_script = "uid://d20o527a4y4ee"

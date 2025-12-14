@@ -9,7 +9,7 @@
 {
   "$schema": "https://chickensoft.games/schemas/addons.schema.json",
   "path": ".void", // default
-  "cache": ".addons/test", // default
+  "cache": ".addons/godotenv", // default
   "addons": {
     //* Zip releases
     "aspect_ratio_resize_container": {

@@ -102,7 +102,10 @@ if (
     )
 
 if not CI:
-    subprocess.run(["dotnet", "godotenv", "addons", "install"], shell=True)
+    subprocess.run(
+        ["dotnet", "godotenv", "addons", "install"],
+        stderr=subprocess.DEVNULL,
+    )
 else:
     print("")
 

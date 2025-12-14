@@ -10,7 +10,7 @@
       "rollForward": false
     },
     "chickensoft.godotenv": {
-      "version": "2.15.0",
+      "version": "2.16.1",
       "commands": [
         "godotenv"
       ],

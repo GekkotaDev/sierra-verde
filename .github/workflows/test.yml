@@ -15,6 +15,9 @@ on:
 env:
   CI_CD: true
 
+permissions:
+  contents: write
+
 
 jobs:
   test:

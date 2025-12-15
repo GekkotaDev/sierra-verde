@@ -101,13 +101,13 @@ if (
         onexc=on_rmtree_exc,
     )
 
-# if not CI:
-#     subprocess.run(
-#         ["dotnet", "godotenv", "addons", "install"],
-#         stderr=subprocess.DEVNULL,
-#     )
-# else:
-#     print("")
+if not CI:
+    subprocess.run(
+        ["dotnet", "godotenv", "addons", "install"],
+        # stderr=subprocess.DEVNULL,
+    )
+else:
+    print("")
 
 
 for name, git in DEPENDENCIES.items():

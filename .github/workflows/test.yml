@@ -44,7 +44,6 @@ jobs:
     - name: Install dependencies
       run: |
         dotnet tool restore
-        dotnet godotenv addons install
         uv sync
         uv run ./scripts/python/install_addons.py
     - uses: MikeSchulze/gdUnit4-action@v1.2.2

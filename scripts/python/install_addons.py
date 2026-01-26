@@ -127,6 +127,8 @@ for name, git in DEPENDENCIES.items():
             subprocess.run(
                 ["mklink", "/j", target, addon], shell=True, capture_output=True
             )
+        elif CI:
+            shutil.copy(addon, target)
         else:
             os.symlink(addon, target)
 
